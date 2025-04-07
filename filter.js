@@ -4,28 +4,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const brandFilter = document.getElementById('brandFilter');
     const resetButton = document.getElementById('resetFilters');
     const carBoxes = document.querySelectorAll('.flex-box');
-    
-    // Price ranges
+
     const PRICE_RANGES = {
         low: { min: 100000, max: 200000 },
         medium: { min: 200001, max: 300000 },
         high: { min: 300001, max: Infinity }
     };
     
-    // Add event listeners
+    // byshof el changes el hsalt fe el drop down meanu 3ashn low el user 25tar hag mo5tlfa 
     if (categoryFilter) categoryFilter.addEventListener('change', filterCars);
     if (priceFilter) priceFilter.addEventListener('change', filterCars);
     if (brandFilter) brandFilter.addEventListener('change', filterCars);
     if (resetButton) resetButton.addEventListener('click', resetFilters);
     
-    // Helper function to parse price strings
-  ]
-    // Normalize string for comparison
+    
+  
+    // byt2kad eno mafesh spaces aw haga 
     function normalizeString(str) {
         return str ? str.trim().toLowerCase() : '';
     }
     
-    // Main filtering function
     function filterCars() {
         const selectedCategory = normalizeString(categoryFilter ? categoryFilter.value : 'all');
         const selectedPrice = priceFilter ? priceFilter.value : 'all';
@@ -40,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const brand = normalizeString(box.dataset.brand);
             
             // Check category match
-            const categoryMatch = selectedCategory === 'all' || 
-                                category === selectedCategory;
+            const categoryMatch = selectedCategory === 'all' ||   category === selectedCategory;
             
             // Check price match
             let priceMatch = true;
@@ -51,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Check brand match (case insensitive)
-            const brandMatch = selectedBrand === 'all' || 
-                             brand === selectedBrand;
+            const brandMatch = selectedBrand === 'all' ||  brand === selectedBrand;
             
             // Show/hide element
             const shouldShow = categoryMatch && priceMatch && brandMatch;
@@ -61,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (shouldShow) hasVisibleItems = true;
         });
         
-        updateNoResultsMessage(hasVisibleItems);
     }
     
     // Reset all filters
@@ -72,27 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (brandFilter) brandFilter.value = 'all';
         filterCars();
     }
-    
-    // Show/hide no results message
-    function updateNoResultsMessage(hasVisibleItems) {
-        const noResultsMsg = document.getElementById('no-results-message');
-        const flexContainer = document.querySelector('.flex-container');
-        
-        if (!hasVisibleItems) {
-            if (!noResultsMsg && flexContainer) {
-                const msg = document.createElement('p');
-                msg.id = 'no-results-message';
-                msg.textContent = 'No cars match your filters. Try different criteria.';
-                msg.style.textAlign = 'center';
-                msg.style.margin = '20px 0';
-                msg.style.color = '#ff0000';
-                flexContainer.appendChild(msg);
-            }
-        } else if (noResultsMsg) {
-            noResultsMsg.remove();
-        }
-    }
-    
     // Initialize filters on page load
     filterCars();
 });
