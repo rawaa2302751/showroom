@@ -75,62 +75,6 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load cart from localStorage
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartContainer = document.getElementById('cart-items-container');
-            const subtotalElement = document.querySelector('.subtotal-amount');
-            const totalElement = document.querySelector('.total-amount');
-            const cartCountElement = document.querySelector('.cart-count');
-
-            // Update cart count
-            function updateCartCount() {
-                const itemCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
-                cartCountElement.textContent = itemCount;
-            }
-
-            // Render cart items
-            function renderCart() {
-                if (cart.length === 0) {
-                    cartContainer.innerHTML = '<div class="empty-cart-message">Your cart is empty</div>';
-                    subtotalElement.textContent = '$0';
-                    totalElement.textContent = '$0';
-                    updateCartCount();
-                    return;
-                }
-
-                let cartHTML = '';
-                let subtotal = 0;
-
-                cart.forEach(item => {
-                    const itemTotal = item.price * (item.quantity || 1);
-                    subtotal += itemTotal;
-
-                    cartHTML += `
-                        <div class="cart-item">
-                            <div class="cart-item-details">
-                                <h3>${item.name}</h3>
-                                <p>${item.brand || ''}</p>
-                                <p>Quantity: ${item.quantity || 1}</p>
-                            </div>
-                            <div class="cart-item-price">
-                                $${itemTotal.toLocaleString()}
-                            </div>
-                        </div>
-                    `;
-                });
-
-                cartContainer.innerHTML = cartHTML;
-                subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
-                totalElement.textContent = `$${subtotal.toLocaleString()}`;
-                updateCartCount();
-            }
-
-            // Initialize
-            renderCart();
-        });
-    </script>
 </body>
 </html>
 

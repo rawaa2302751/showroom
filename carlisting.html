@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="carlisting.css">
     <script src="filter.js"></script>
+    <script src="cart-listing.js"></script>
+    <script src="cartjavanew.js"></script>
 </head>
 <body>
     
@@ -55,10 +57,10 @@
             <div class="flex-box" data-category="Gas" data-price="$400,000" data-brand="porsche">
             <img src="car15.png" alt="Lamborghini Aventador" class="car-image">
             <div class="car-info" >
-                <h3>porsche 911 turbo gas</h3>
+                <h3>porsche 911 turbo gas shahd</h3>
                 <p>Price: $400,000</p>
                 <p>Engine: V12</p>
-                <button onclick="window.location.href='cart.html'" class="add-to-cart" data-price="400,000" data-brand="porsche"> Cart </button>
+                <button onclick="rendercart()" data-price="400,000" data-brand="porsche"> Cart </button>
                 </div>
             </div>
             
@@ -83,16 +85,16 @@
             <div class="flex-box"data-category="Gas" data-price="$200,000" data-brand="mclaren">
                 <img src="car11.png" alt="Lamborghini Aventador" class="car-image">
 <div class="car-info" >
-                <h3>mclaren 720s gas</h3>
+                <h3>mclaren 720s gas shahd</h3>
                 <p>Price: $180,000</p>
                 <p>Engine: Flat-6</p>
-                <button onclick="window.location.href='cart.html'" data-category="Gas" data-price="$200,000" data-brand="mclaren"> Cart </button>
+                <button onclick="loadCartFromStaticData()" data-category="Gas" data-price="$200,000" data-brand="mclaren"> Cart </button>
                 </div>
             </div>
             <div class="flex-box" data-category="Hybrid" data-price="$250,000" data-brand="mclaren">
                 <img src="car12.png" alt="Lamborghini Aventador" class="car-image">
 <div class="car-info"  >
-                <h3>mclaren W1 hybird</h3>
+                <h3>mclaren W1 hybird shahd</h3>
                 <p>Price: $180,000</p>
                 <p>Engine: Flat-6</p>
                 <button onclick="window.location.href='cart.html'" data-category="Gas" data-price="$200,000" data-brand="mclaren"> Cart </button>
@@ -102,7 +104,7 @@
                 <img src="car13.png" alt="McLaren Solus GT" class="car-image">
 <div class="car-info" >
                 <h3>McLaren Solus GT</h3>
-                <p>Price: $180,000</p>
+                <p>Price: $180,0000</p>
                 <p>Engine: Flat-6</p>
                 <button onclick="window.location.href='cart.html'" data-category="Electric" data-price="$120,000" data-brand="mclaren"> Cart </button>
             </div>

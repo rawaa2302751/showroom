@@ -120,7 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
+    function addToCartAndRedirecttest() {
+       
+    alert("JavaScript is successfully connected and working!");
+        //window.location.href = 'cart.html'; // Redirect to cart page
+    }
     function addToCartAndRedirect(event) {
         event.preventDefault();
         event.stopPropagation();
