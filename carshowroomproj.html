@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom - Home</title>
+    <link rel="stylesheet" href="styleproj.css"> <!-- Link to CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for Cart Icon -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <h2>&nbsp;&nbsp;Car Showroom</h2> <!-- Added space before name -->
+            </div>
+            <ul>
+                <li><a href="#" class="active" onclick="playSound('porsche-105500')">Home</a></li> <!-- Sound added -->
+                <li><a href="carlisting.html" >Car Listing</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+                <li><a href="#">Sign Up/Login</a></li>
+
+            </ul>
+            <div class="cart-container">
+                <button class="cart-text-button" onclick="window.location.href='cart.html'">Cart</button> <!-- Added new button -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Looping Videos -->
+    <section class="hero">
+        <video autoplay muted id="hero-video">
+            <source src="assests/videos/videoonespeed.mp4" type="video/mp4">
+      
+        </video>
+        <div class="hero-content">
+            <h1>Discover Your Dream Car</h1>
+            <p>Explore the latest models and find the car of your dreams.</p>
+        </div>
+    </section>
+
+    <!-- Featured Sections -->
+    <section class="featured">
+        <!-- New Releases -->
+        <div class="featured-item">
+            <img src="assests/image/newrealease.jpg" alt="New Releases">
+            <h2>New Releases</h2>
+            <p>Discover the latest models.</p>
+        </div>
+
+
+<!-- Best Sellers -->
+<div class="featured-item">
+    <img id="best-seller-image" src="car2.png" alt="Best Sellers" onclick="changeBestSellerImage()">
+    <h2>Best Sellers</h2>
+    <p>Find out our top-selling cars.</p>
+</div>
+
+
+        <!-- Brand News -->
+        <div class="featured-item">
+            <img src="assests/image/brandnew.jpg" alt="Brand News">
+            <h2>Brand News</h2>
+            <p>Stay updated with our latest announcements.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Car Showroom | All Rights Reserved</p>
+            <p>
+                <a href="termsofpolicy.html" target="_blank">Terms of Service</a> | 
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+            </p>
+            
+            <p>Email: <a href="mailto:support@carshowroom.com">support@carshowroom.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+            <p>Address: 123 Street, London, England</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="javascriptproj.js"></script>
+
+    <!-- Cookie Banner -->
+<div class="cookie-banner">
+    <p>This website uses cookies. <a href="privacy.html">Learn more</a></p>
+    <button onclick="this.parentElement.style.display='none'">Accept</button>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="carlisting.css">
+    <script src="filter.js"></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <h2>&nbsp;&nbsp;Car Showroom</h2>
+            </div>
+            <ul>
+                <li><a href="carshowroomproj.html" >Home</a></li>
+                <li><a href="carlisting.html" class="active">Car Listings</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up/Login</a></li>
+            </ul>
+            <div class="cart-container">
+                <button class="cart-text-button" onclick="window.location.href='cart.html'">Cart</button> <!-- Added new button -->
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="filter-bar">
+        <select  id ="categoryFilter" class="filter-dropdown">
+            <option value="all">All Categories</option>
+            <option value="Electric">Electric Car</option>
+            <option value="Gas">Gas</option>
+            <option value="Hybrid">Hybrid</option>
+        </select>
+        
+        <select  id="priceFilter"class="filter-dropdown">
+            <option value="all">All Prices</option>
+            <option value="low">$100,000 - $200,000</option>
+            <option value="medium">$200,000 - $300,000</option>
+            <option value="high">$300,000+</option>
+        </select>
+        <select  id="brandFilter" class ="filter-dropdown">
+            <option value="all">All brands </option>
+            <option value ="Lamborghini"> Lamborghini </option>
+            <option value ="Ferrari"> Ferrari </option>
+            <option value ="McLaren"> McLaren </option>
+            <option value ="porsche"> porsche </option>
+        </select>
+        <button id="resetFilters" class="filter-dropdown">Reset Filters</button>
+        </div>
+        <div class="flex-container">
+            <div class="flex-box" data-category="Gas" data-price="$400,000" data-brand="porsche">
+            <img src="car15.png" alt="Lamborghini Aventador" class="car-image">
+            <div class="car-info" >
+                <h3>porsche 911 turbo gas</h3>
+                <p>Price: $400,000</p>
+                <p>Engine: V12</p>
+                <button onclick="window.location.href='cart.html'" class="add-to-cart" data-price="400,000" data-brand="porsche"> Cart </button>
+                </div>
+            </div>
+            
+            <div class="flex-box" data-category="Hybrid" data-price="$350,000" data-brand="porsche">
+                <img src="car2.png" alt="Lamborghini Aventador" class="car-image">
+                <div class ="car-info" >
+                <h3>porsche panamera hybird</h3>
+                <p>Price: $350,000</p>
+                <p>Engine: V8</p>
+                <button onclick="window.location.href='cart.html'" data-category="Hybrid" data-price="$350,000" data-brand="porsche" > Cart </button>
+                </div>
+            </div>
+            <div class="flex-box"data-category="Electric " data-price="$180,000" data-brand="porsche" >
+                <img src="car14.png" alt="Lamborghini Aventador" class="car-image">
+<div class="car-info" >
+                <h3>porsche 911 targa electric </h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Electric " data-price="$180,000" data-brand="porsche" > Cart </button>
+</div>
+            </div>
+            <div class="flex-box"data-category="Gas" data-price="$200,000" data-brand="mclaren">
+                <img src="car11.png" alt="Lamborghini Aventador" class="car-image">
+<div class="car-info" >
+                <h3>mclaren 720s gas</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Gas" data-price="$200,000" data-brand="mclaren"> Cart </button>
+                </div>
+            </div>
+            <div class="flex-box" data-category="Hybrid" data-price="$250,000" data-brand="mclaren">
+                <img src="car12.png" alt="Lamborghini Aventador" class="car-image">
+<div class="car-info"  >
+                <h3>mclaren W1 hybird</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Gas" data-price="$200,000" data-brand="mclaren"> Cart </button>
+                </div>
+            </div>
+            <div class="flex-box"data-category="Electric" data-price="$120,000" data-brand="mclaren">
+                <img src="car13.png" alt="McLaren Solus GT" class="car-image">
+<div class="car-info" >
+                <h3>McLaren Solus GT</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Electric" data-price="$120,000" data-brand="mclaren"> Cart </button>
+            </div>
+            </div>
+            <div class="flex-box" data-category="Gas" data-price="$300,000" data-brand="Ferrari">
+                <img src="car1.png" alt="Ferrari la Ferrari" class="car-image">
+<div class="car-info" >
+                <h3>Ferrari La Ferrari</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'"  data-category="Gas" data-price="$300,000" data-brand="Ferrari" > Cart </button>
+            </div>
+            </div>
+            <div class="flex-box" data-category="Hybrid" data-price="$400,000" data-brand="Ferrari">
+                <img src="car6.png"alt="SF90" class="car-image">
+<div class="car-info" >
+                <h3>Ferrari SF90</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Hybrid" data-price="$400,000" data-brand="Ferrari"> Cart </button>
+            </div>
+            </div>
+            <div class="flex-box" data-category="Electric" data-price="$120,000" data-brand="Ferrari">
+                <img src="car4.jpg" alt="Ferrari Purosangue" class="car-image">
+<div class ="car-info" >
+                <h3>Ferrari Purosangue</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'"data-category="Electric" data-price="$120,000" data-brand="Ferrari"></button>
+            </div>
+            </div>
+            <div class="flex-box" data-category="Gas" data-price="$100,000" data-brand="lamborghini" >
+                <img src="car3.png" alt="lamborghini revuelto gas" class="car-image">
+<div class="car-info" >
+                <h3>lamborghini revuelto gas</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'"data-category="Gas" data-price="$100,000" data-brand="lamborghini"> Cart </button>
+            </div>
+            </div>
+            <div class="flex-box"data-category="Hybrid" data-price="$450,000" data-brand="lamborghini">
+                <img src="car9.png" alt="lamborghini huracan hybrid" class="car-image">
+<div class="car-info" >
+                <h3>lamborghini huracan hybrid</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'"data-category="Hybrid" data-price="$450,000" data-brand="lamborghini"> Cart </button>
+                </div>
+            </div>
+            <div class="flex-box" data-category="Electric" data-price="$500,000" data-brand="lamborghini">
+                <img src="Car10.png"alt="lamborghini Urus SE" class="car-image">
+<div class="car-info"  >
+                <h3>lamborghini Urus SE</h3>
+                <p>Price: $180,000</p>
+                <p>Engine: Flat-6</p>
+                <button onclick="window.location.href='cart.html'" data-category="Electric" data-price="$500,000" data-brand="lamborghini"> Cart </button>
+            </div>
+            </div>
+        </div>
+
+</body>
+</html>

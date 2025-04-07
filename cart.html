@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Additional styles for dynamic content */
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-price {
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        .empty-cart-message {
+            text-align: center;
+            padding: 40px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <h2>&nbsp;&nbsp;Car Showroom</h2>
+            </div>
+            <ul>
+                <li><a href="carshowroomproj.html">Home</a></li>
+                <li><a href="carlisting.html">Car Listings</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up/Login</a></li>
+            </ul>
+            <div class="cart-container">
+                <button class="cart-text-button" onclick="window.location.href='cart.html'">Cart</button>
+            </div>
+        </div>
+    </nav>
+
+    <a href="carlisting.html" class="back-button">⬅ Back</a>
+    <div class="container">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <a href="carlisting.html">Continue Shopping</a>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Dynamic content will be inserted here -->
+            <div class="empty-cart-message">Your cart is empty</div>
+        </div>
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-details">
+                <p>Subtotal</p>
+                <p class="subtotal-amount">$0</p>
+            </div>
+            <hr>
+            <div class="summary-details">
+                <p>Total</p>
+                <p class="total-amount">$0</p>
+            </div>
+            <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items-container');
+            const subtotalElement = document.querySelector('.subtotal-amount');
+            const totalElement = document.querySelector('.total-amount');
+            const cartCountElement = document.querySelector('.cart-count');
+
+            // Update cart count
+            function updateCartCount() {
+                const itemCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                cartCountElement.textContent = itemCount;
+            }
+
+            // Render cart items
+            function renderCart() {
+                if (cart.length === 0) {
+                    cartContainer.innerHTML = '<div class="empty-cart-message">Your cart is empty</div>';
+                    subtotalElement.textContent = '$0';
+                    totalElement.textContent = '$0';
+                    updateCartCount();
+                    return;
+                }
+
+                let cartHTML = '';
+                let subtotal = 0;
+
+                cart.forEach(item => {
+                    const itemTotal = item.price * (item.quantity || 1);
+                    subtotal += itemTotal;
+
+                    cartHTML += `
+                        <div class="cart-item">
+                            <div class="cart-item-details">
+                                <h3>${item.name}</h3>
+                                <p>${item.brand || ''}</p>
+                                <p>Quantity: ${item.quantity || 1}</p>
+                            </div>
+                            <div class="cart-item-price">
+                                $${itemTotal.toLocaleString()}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                cartContainer.innerHTML = cartHTML;
+                subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
+                totalElement.textContent = `$${subtotal.toLocaleString()}`;
+                updateCartCount();
+            }
+
+            // Initialize
+            renderCart();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
