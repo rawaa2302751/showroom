@@ -1,29 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get filter elements
     const categoryFilter = document.getElementById('categoryFilter');
     const priceFilter = document.getElementById('priceFilter');
     const brandFilter = document.getElementById('brandFilter');
     const resetButton = document.getElementById('resetFilters');
     const carBoxes = document.querySelectorAll('.flex-box');
-    
-    // Price ranges
+
     const PRICE_RANGES = {
         low: { min: 100000, max: 200000 },
         medium: { min: 200001, max: 300000 },
         high: { min: 300001, max: Infinity }
     };
-    
-    // Add event listeners
+
     if (categoryFilter) categoryFilter.addEventListener('change', filterCars);
     if (priceFilter) priceFilter.addEventListener('change', filterCars);
     if (brandFilter) brandFilter.addEventListener('change', filterCars);
     if (resetButton) resetButton.addEventListener('click', resetFilters);
     
     // Helper function to parse price strings
-    function parsePrice(priceString) {
-        const numericString = priceString.replace(/[^0-9]/g, '');
-        return numericString ? parseInt(numericString) : 0;
-    }
     
     // Normalize string for comparison
     function normalizeString(str) {
