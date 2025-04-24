@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const brandFilter = document.getElementById('brandFilter');
     const resetButton = document.getElementById('resetFilters');
     const carBoxes = document.querySelectorAll('.flex-box');
-    
+    //prices
     const PRICE_RANGES = {
         low: { min: 100000, max: 200000 },
         medium: { min: 200001, max: 300000 },
