@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src=" cart.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="cart.css">
-    <style>
-        /* Additional styles for dynamic content */
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .cart-item-details {
-            flex-grow: 1;
-        }
-        .cart-item-price {
-            font-weight: bold;
-            margin-left: 20px;
-        }
-        .empty-cart-message {
-            text-align: center;
-            padding: 40px;
-            font-style: italic;
-            color: #666;
-        }
-    </style>
+
 </head>
 <body>
     <div class="background-image"></div>
@@ -35,17 +14,17 @@
     <nav>
         <div class="navbar">
             <div class="logo">
-                <h2>&nbsp;&nbsp;Car Showroom</h2>
+                <h2 style="margin-left: 16px;">Car Showroom</h2> 
             </div>
             <ul>
                 <li><a href="carshowroomproj.html">Home</a></li>
                 <li><a href="carlisting.html">Car Listings</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="userdashboard.html">Dashboard</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="signup.html">Sign Up/Login</a></li>
+                <li><a href="login.html">Sign Up/Login</a></li>
             </ul>
             <div class="cart-container">
-                <button class="cart-text-button" onclick="window.location.href='cart.html'">Cart</button>
+                <button class="cart-text-button" onclick="renderCart()">Cart</button>
             </div>
         </div>
     </nav>
@@ -57,7 +36,6 @@
             <a href="carlisting.html">Continue Shopping</a>
         </div>
         <div class="cart-items" id="cart-items-container">
-            <!-- Dynamic content will be inserted here -->
             <div class="empty-cart-message">Your cart is empty</div>
         </div>
         <div class="cart-summary">
@@ -77,9 +55,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
