@@ -28,8 +28,7 @@ function addToCart(event) {
             quantity: 1
         });
     }
-
-    // Save updated cart
+// Save updated cart
     localStorage.setItem('cart', JSON.stringify(cart));
     
     // Update cart count display
